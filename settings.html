@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Sample Custom Component</title>
+
+	<!-- include sample apps styling -->
+	<link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+	<!-- include the Sites SDK -->
+	<script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+</head>
+
+<body style="display:none; margin:0px; padding-left:3px;background:transparent;background-image:none;">
+
+	<!-- container for the settings panel -->
+	<div id="settingsContainer" class="scs-component-settings">
+		<div data-bind="text: 'waiting for initialization to complete'" class="settings-heading"></div>
+	</div>
+
+	<script type="module">
+		import React from 'https://esm.sh/react';
+		import ReactDOM from 'https://esm.sh/react-dom';
+		import SettingsLayout from './lib/settings.mjs';
+
+		const parentElement = document.getElementById('settingsContainer');
+		ReactDOM.render(React.createElement(SettingsLayout), parentElement);
+	</script>
+</body>
+
+</html>
